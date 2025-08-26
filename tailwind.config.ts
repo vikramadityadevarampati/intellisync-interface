@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,26 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// AI Interface specific colors
+				'ai-purple': {
+					50: 'hsl(var(--ai-purple-50))',
+					100: 'hsl(var(--ai-purple-100))',
+					500: 'hsl(var(--ai-purple-500))',
+					600: 'hsl(var(--ai-purple-600))',
+					700: 'hsl(var(--ai-purple-700))',
+					900: 'hsl(var(--ai-purple-900))',
+				},
+				'ai-blue': {
+					50: 'hsl(var(--ai-blue-50))',
+					100: 'hsl(var(--ai-blue-100))',
+					500: 'hsl(var(--ai-blue-500))',
+					600: 'hsl(var(--ai-blue-600))',
+					700: 'hsl(var(--ai-blue-700))',
+				},
+				'neural': {
+					DEFAULT: 'hsl(var(--neural))',
+					foreground: 'hsl(var(--neural-foreground))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -67,6 +88,10 @@ export default {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
+			},
+			backgroundImage: {
+				'gradient-neural': 'linear-gradient(135deg, hsl(var(--ai-purple-600)), hsl(var(--ai-blue-600)))',
+				'gradient-radial': 'radial-gradient(ellipse at center, hsl(var(--ai-purple-500) / 0.1), transparent 70%)',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +109,49 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in': {
+					'0%': {
+						transform: 'translateX(-100%)'
+					},
+					'100%': {
+						transform: 'translateX(0)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.6'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px hsl(var(--ai-purple-500) / 0.3)'
+					},
+					'50%': {
+						boxShadow: '0 0 30px hsl(var(--ai-purple-500) / 0.5)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'slide-in': 'slide-in 0.3s ease-out',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+				'glow': 'glow 3s ease-in-out infinite',
 			}
 		}
 	},
